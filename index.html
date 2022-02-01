@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      img {
+        transform: rotate(0deg);
+      }
+      .oi {
+        background: url("./north.png") no-repeat center center;
+        display: block;
+        background-color: #000;
+      }
+    </style>
+    <div class="oi"></div>
+    <img src="north.png" alt="" />
+
+    <script>
+      function position(angle) {
+        const angleFloor = Math.floor(angle);
+        const directions = {
+          N: angleFloor >= 60 + 1 && angleFloor <= 120 - 1,
+          NE: angleFloor >= 30 && angleFloor <= 60,
+          E:
+            (angleFloor >= 0 && angleFloor <= 30 - 1) ||
+            (angleFloor >= 330 + 1 && angleFloor <= 360),
+          SE: angleFloor >= 300 && angleFloor <= 330,
+          S: angleFloor >= 240 + 1 && angleFloor <= 300 - 1,
+          SW: angleFloor >= 210 && angleFloor <= 240,
+          W: angleFloor >= 150 + 1 && angleFloor <= 210 - 1,
+          NW: angleFloor >= 120 && angleFloor <= 150,
+        };
+      }
+    </script>
+  </body>
+</html>
